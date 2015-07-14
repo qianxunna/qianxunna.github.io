@@ -52,41 +52,67 @@ th,td{padding: 5px 10px;text-align: left;border-bottom: 1px solid #eee;}
 			<td><span class="ya">td-4-cc</span><a href="">javascript</a></td>
 			<td><span class="ya">td-5-cc</span><a href="">javascript</a></td>
 		</tr>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td><span class="ya">td-2-cc</span><a href="">javascript</a></td>
+			<td><span class="ya">td-3-cc</span><a href="">javascript</a></td>
+			<td><span class="ya">td-4-cc</span><a href="">javascript</a></td>
+			<td><span class="ya">td-5-cc</span><a href="">javascript</a></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td><span class="ya">td-2-cc</span><a href="">javascript</a></td>
+			<td><span class="ya">td-3-cc</span><a href="">javascript</a></td>
+			<td><span class="ya">td-4-cc</span><a href="">javascript</a></td>
+			<td><span class="ya">td-5-cc</span><a href="">javascript</a></td>
+		</tr>
 	</tbody>
 </table>
 
 <button id="btn-tijiao">提交</button>
-
+<style>
+.bbcc{ background:red; font-size: 10px;}
+</style>
 <p>你选中的值是</p>
 <div id="res">
 
 </div>
 
-
-<input type="checkbox" id="hhe" class="haha">
-
-
 <script src="sta/js/jquery.min.js"></script>
 <script>
+//提交时 把选中行的第一个td 文本输出到 #res
 $('#btn-tijiao').click(function() {
-	var carr = $('tbody input:checkbox:checked')
+	var carr = $('tbody input:checked')
+	// $('tbody input:odd').parents('tr').attr('class','bbcc')
+
+	$('tbody input:odd').parents('tr').css({'background':'red','border-bottom':'10px'})
+	$('tbody input:odd').parents('tr').attr({id:'a a1',class:'b b1'})
+
 	var aa = '';
 	carr.each(function(i){
-		aa += ','+$(this).parents('tr').find('td').eq(1).find('span').html()
+		//aa += ','+$(this).parents('tr').find('td').eq(1).find('span').html()
+		aa += ','+$(this).parents('tr').find('span').first().html()
 	})
 	aa = aa.substr(1)
 	$('#res').html(aa);
 });
-
-$('thead ')
-
-$('button').click(function(event) {
-	/* Act on the event */
+//全选  全部选
+$('thead').click(function() {
+	var isChecked = $('thead input').prop('checked')
+	$('tbody input').prop('checked',isChecked ? true : false);
 });
-
-$('button').on('click', function() {
-
+//当有一个没有选的时候全选按钮不选
+$('tbody input').click(function(){
+		var iAll = $('tbody input').length,
+			iCheckedNum = $('tbody input:checked').length
+		$('thead input').prop('checked', iAll === iCheckedNum ? true : false)
+		
 })
+
+
+//attr 		id  class name src href title alt type
+// prop        checked selected 
+
 
 
 </script>
