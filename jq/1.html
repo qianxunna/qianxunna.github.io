@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+
+<style>
+table{width: 100%;}
+th,td{padding: 5px 10px;text-align: left;border-bottom: 1px solid #eee;}
+
+
+</style>
+
+<table>
+	<thead>
+		<tr>
+			<th><input type="checkbox">全选</th>
+			<th>td-2</th>
+			<th>td-3</th>
+			<th>td-4</th>
+			<th>td-5</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td><span class="ya">td-2-1</span><a href="">javascript</a></td>
+			<td><span class="ya">td-3-1</span><a href="">javascript</a></td>
+			<td><span class="ya">td-4-1</span><a href="">javascript</a></td>
+			<td><span class="ya">td-5-1</span><a href="">javascript</a></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td><span class="ya">td-2-2</span><a href="">javascript</a></td>
+			<td><span class="ya">td-3-2</span><a href="">javascript</a></td>
+			<td><span class="ya">td-4-2</span><a href="">javascript</a></td>
+			<td><span class="ya">td-5-2</span><a href="">javascript</a></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td><span class="ya">td-2-aa</span><a href="">javascript</a></td>
+			<td><span class="ya">td-3-aa</span><a href="">javascript</a></td>
+			<td><span class="ya">td-4-aa</span><a href="">javascript</a></td>
+			<td><span class="ya">td-5-aa</span><a href="">javascript</a></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td><span class="ya">td-2-cc</span><a href="">javascript</a></td>
+			<td><span class="ya">td-3-cc</span><a href="">javascript</a></td>
+			<td><span class="ya">td-4-cc</span><a href="">javascript</a></td>
+			<td><span class="ya">td-5-cc</span><a href="">javascript</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<button id="btn-tijiao">提交</button>
+
+<p>你选中的值是</p>
+<div id="res">
+	
+</div>
+
+
+<input type="checkbox" id="hhe" class="haha">
+
+
+<script src="jquery.min.js"></script>
+<script>
+$('#btn-tijiao').click(function() {
+	var carr = $('tbody input:checkbox:checked')
+	var aa = '';
+	carr.each(function(i){
+		aa += ','+$(this).parents('tr').find('td').eq(1).find('span').html()
+	})
+	aa = aa.substr(1)
+	$('#res').html(aa);
+});
+
+
+
+$('button').click(function(event) {
+	/* Act on the event */
+});
+
+$('button').on('click', function() {
+
+})
+
+
+</script>
+</body>
+</html>
