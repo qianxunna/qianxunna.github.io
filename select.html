@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://sta.youayou.com/h5/js/jquery.js"></script>
+</head>
+<body>
+	<!-- <select id="typess">
+		<option value="1">游啊游</option>
+		<option value="2">去哪儿</option>
+		<option value="3">携程</option>
+		<option value="4">还玩</option>
+		<option value="5">在路上</option>
+	</select>
+	<input type="button" class="bian" value="游啊游"/>
+	<input type="button" class="bian" value="去哪儿"/>
+	<input type="button" class="bian" value="携程"/>
+	<input type="button" class="bian" value="还玩"/>
+	<input type="button" class="bian" value="在路上"/> -->
+<script>
+$(function(){
+	/*$(".bian").click(function() {
+		var cc = $(this).val();
+		var $cOption = $('#typess > option');
+		$cOption.each(function(index){
+			var bb = $(this).html();
+			if (bb == cc) {
+	            // $(this).prop('selected', true)
+	            $(this).attr('selected', true)
+	            $cOption.context.innerHTML
+			}
+		});
+	});*/
+
+	/*$(".bian").click(function() {
+		var $this = $(this);
+		$('#typess option').each(function() {
+			$(this).text() === $this.val() && $(this).prop('selected', true);
+		});
+	});*/
+
+});
+</script>
+
+
+
+<select id="typess">
+	<option value="1">游啊游</option>
+	<option value="2">去哪儿</option>
+	<option value="3">携程</option>
+	<option value="4">还玩</option>
+	<option value="5">在路上</option>
+</select>
+<input type="button" class="bian" value="0"/>
+<input type="button" class="bian" value="1"/>
+<input type="button" class="bian" value="2"/>
+<input type="button" class="bian" value="3"/>
+<input type="button" class="bian" value="4"/>
+
+<script>
+
+$('.bian').click(function() {
+	console.log($('option').context.innerHTML)
+	var cc = $(this).val();
+	cc = parseInt(cc)+1;
+	$('option[value='+cc+']').prop('selected', true)
+});
+
+
+
+
+
+</script>
+
+
+<div title=" man  ">title~=man</div>
+
+<div title="man-2">title~=man</div>
+
+<div title="   djs man">title~=man</div>
+<div title="   djs man  ">title~=man</div>
+
+<div title="mans djs dfd">title~=man</div>
+
+<div title="1mans man">title~=man333</div>
+
+<div title="man mann">title~=man</div>
+
+<div title="mans">title~=man22222222</div>
+
+
+<script>
+
+// console.log($('div[title!=man]').css('background', 'red'))
+
+
+$('div[title!=man]').css('background', function(i, v) {
+	return 'red'
+})
+
+
+</script>
+
+
+<div title="man man1 man2"></div>
+
+
+<div class=" man1  man  man2"></div>
+
+
+<script>
+
+var o = document.querySelector('.man.man1.man2')
+
+console.log( o.classList )
+
+
+</script>
+
+
+<div id="demo" style=" test1  test  test2   "></div>
+
+
+<script>
+
+var o = document.querySelector('#demo')
+
+console.log(o.styleList)
+
+
+</script>
+
+
+
+<script>
+
+var str =" test1  test        test2  test2   test2    test2  "
+
+function hehe(s) {
+
+
+
+	return ;
+}
+
+
+console.log(hehe(str));
+
+</script>
+
+
+
+
+
+</body>
+</html>

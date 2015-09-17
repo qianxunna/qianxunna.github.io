@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<style>
+div{padding: 20px 10px;border:1px solid #999;background-color: orange;}
+span{background-color: red;color: #fff;margin-right: 5px;padding: 5px;}
+</style>
+
+<div id="box">
+	<b>bbbb</b>
+	<span>span-1</span>
+</div>
+
+<button>添加元素</button>
+
+<script>
+
+var oBox = document.querySelector('#box'),
+	aSpan = document.querySelectorAll('#box span'),
+	oBtn = document.querySelector('button'),
+    i=2
+/*
+for(var i = 0; i < aSpan.length; i++) {
+	aSpan[i].onclick = function() {
+		console.log(this)
+	}
+}
+*/
+oBtn.onclick = function(){
+	var o = document.createElement('span');
+	o.innerHTML = 'span-'+i
+	oBox.appendChild(o)
+	i++;
+}
+
+oBox.onclick = function(e){
+	e.target.tagName.toLowerCase() === 'span' && console.log(e.target);
+}
+</script>
+
+
+</body>
+</html>

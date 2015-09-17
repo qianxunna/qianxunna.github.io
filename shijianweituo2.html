@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery.js"></script>
+</head>
+<body>
+
+<style>
+div{padding: 20px 10px;border:1px solid #999;background-color: orange;}
+span{background-color: red;color: #fff;margin-right: 5px;padding: 5px;}
+</style>
+
+<div id="box">
+	<b>bbbb</b>
+	<span>span-1</span>
+</div>
+
+<button>添加元素</button>
+
+<script>
+$('button').click(function(){
+	$('#box').append('span')
+});
+
+</script>
+
+
+</body>
+</html>

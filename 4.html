@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+
+
+
+<style>
+#div1:hover{background-color: red;line-height: 40px;}
+</style>
+
+
+<div id="div1">
+	<span>span-1</span>
+	<b>b-1</b>
+</div>
+
+<div class="ab ac abc cd"></div>
+
+
+<script src='sta/js/jquery.min.js'></script>
+<script>
+	$(document).click(function(){
+		console.log($('div[class~="ab"]'))
+	})
+</script>
+
+</body>
+</html>

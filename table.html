@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>js 表格</title>
+</head>
+<body>
+
+<style>
+table{width: 100%;}
+th,td{padding: 5px 10px;text-align: left;border-bottom: 1px solid #eee;}
+
+
+</style>
+
+<table>
+	<thead>
+		<tr>
+			<th><input type="checkbox">全选</th>
+			<th>学号</th>
+			<th>语文</th>
+			<th>数学</th>
+			<th>英语</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td>001</td>
+			<td>张三</td>
+			<td>男</td>
+			<td>80</td>
+			<td>90</td>
+			<td>85</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td>002</td>
+			<td>李四</td>
+			<td>男</td>
+			<td>82</tddas<div></div>
+			<td>92</td>
+			<td>86</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td>003</td>
+			<td>王五</td>
+			<td>女</td>
+			<td>83</td>
+			<td>93</td>
+			<td>83</td>dd
+		</tr>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td>004</td>
+			<td>方六</td>
+			<td>男</td>
+			<td>40</td>
+			<td>50</td>
+			<td>65</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<button id="add_before">添加到头部</button>
+<button id="add_after">添加到尾部</button>
+<button id="add_to_two">添加第二行</button>
+<button id="add_last_two">添加倒数第二行</button>
+<button id="add_mid">添加中间一行</button>
+
+
+<div id="temp">
+	<div class="item">学号：<input type="text"></div>
+	<div class="item">姓名：<input type="text"></div>
+	<div class="item">性别：<input type="text"></div>
+	<div class="item">语文：<input type="text"></div>
+	<div class="item">数学：<input type="text"></div>
+	<div class="item">英语：<input type="text"></div>
+</div>
+
+
+
+<script src="sta/js/jquery.min.js"></script>
+<script>
+
+/*$('#add_before').click(function() {
+	var temps = $('#temp').find('input')
+	var str = '<tr><td><input type="checkbox"></td>'
+	$.each(temps,function(i,e){
+		str += '<td>'+$(this).val()+'</td>'
+	})
+	str += '</tr>'
+	$('tbody').prepend(str)
+})
+$('#add_after').click(function() {
+	var temps = $('#temp').find('input')
+	var str = '<tr><td><input type="checkbox"></td>'
+	$.each(temps,function(i,e){
+		str += '<td>'+$(this).val()+'</td>'
+	})
+	str += '</tr>'
+	$('tbody').append(str)
+})*/
+
+$('#add_after, #add_before').click(function(event) {
+	var temps = $('#temp').find('input')
+	var str = '<tr><td><input type="checkbox"></td>'
+	$.each(temps,function(i,e){
+		str += '<td>'+$(this).val()+'</td>'
+	})
+	str += '</tr>'
+	$(this).attr('id') === 'add_after' ? $('tbody').append(str) : $('tbody').prepend(str)
+});
+$('#add_to_two').click(function(event) {
+	var temps = $('#temp').find('input')
+	var str = '<tr><td><input type="checkbox"></td>'
+	$.each(temps,function(i,e){
+		str += '<td>'+$(this).val()+'</td>'
+	})
+	str += '</tr>'
+
+	$('tbody').find('tr').eq(0).after(str)
+});
+$('#add_last_two').click(function(event) {
+	var temps = $('#temp').find('input')
+	var str = '<tr><td><input type="checkbox"></td>'
+	$.each(temps,function(i,e){
+		str += '<td>'+$(this).val()+'</td>'
+	})
+	str += '</tr>'
+
+	var trs = $('tbody').find('tr'),
+		len = trs.length
+	$('tbody').find('tr').eq(len-2).after(str)
+
+});
+$('#add_mid').click(function(event) {
+	var temps = $('#temp').find('input')
+	var str = '<tr><td><input type="checkbox"></td>'
+	$.each(temps,function(i,e){
+		str += '<td>'+$(this).val()+'</td>'
+	})
+	str += '</tr>'
+	var trs = $('tbody').find('tr'),
+		len = trs.length
+	console.log(Math.floor(len/2))
+	$('tbody').find('tr').eq(Math.floor(len/2)-1).after(str)
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery.js"></script>
+</head>
+<body>
+
+
+<select id="typess">
+	<option value="1">游啊游</option>
+	<option value="2">去哪儿</option>
+	<option value="3">携程</option>
+	<option value="4">还玩</option>
+	<option value="5">在路上</option>
+</select>
+<input type="button" class="bian" value="0"/>
+<input type="button" class="bian" value="1"/>
+<input type="button" class="bian" value="2"/>
+<input type="button" class="bian" value="3"/>
+<input type="button" class="bian" value="4"/>
+
+<script>
+
+$('.bian').click(function() {
+	
+
+	$('option').each(function() {
+		console.log($(this))
+		console.log($(this).context)
+		console.log($(this).context.innerHTML)
+	});
+
+	var cc = $(this).val();
+	cc = parseInt(cc)+1;
+	$('option[value='+cc+']').prop('selected', true)
+});
+
+
+
+
+</script>
+
+<style>
+
+div{width: 200px;height: 200px;position: relative;background-color: orange}
+span{position: absolute;left: 50px;top: 100px;width: 300px;height: 300px;background-color: yellow}
+
+</style>
+
+
+<div>
+	div
+	<span>span</span>
+</div>
+
+<script>
+
+$('div').click(function(e) {
+	console.log(e.target)
+	console.log('div')
+});
+
+$('span').click(function(e) {
+	console.log(e.target)
+	console.log('span')
+});
+$('body').click(function(e) {
+	console.log(e.target)
+	console.log('body')
+});
+</script>
+
+</body>
+</html>

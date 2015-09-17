@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery.js"></script>
+</head>
+<body>
+
+
+
+<script>
+// 1、工具方法
+// 2、实例方法
+
+// 工具方法
+$.trim()
+$.ajax()
+$.getScript()
+
+
+// $().attr()
+
+// 字符串
+$('#id')
+$('.class')
+$('select option')
+
+// 元素
+$(this)
+$(document)
+$(window)
+
+// 函数  document.DOMReady
+$(function() { })
+$(document).ready(function() {})
+jQuery(document).ready(function($) {})
+
+
+
+$.type();
+
+/*
+
+$.each($('div'), function() {
+
+})
+
+$('div').each(function() {
+	$(this).addClass('111')
+}).each(function() {
+	console.log($(this))
+})
+
+$.fn.each = function() {
+	$.each( $(this), fn )
+}
+
+*/
+$('div')
+
+</script>
+
+
+
+
+
+<script>
+
+$(function() {
+	/*console.log($('div.box'))
+	console.log(['a', 'b', 'c', 100])
+
+	console.log($('div')[0])
+	console.log($('div')[1])
+	console.log($('div').context)
+	console.log($('div').length)
+	console.log($('div').selector)*/
+
+
+	$('div.box').css('color', 'red')
+
+	$('div.box').css('color', function() {
+		return 'red';
+	})
+
+	$('div.box').css({
+
+	})
+
+	$('div.box').width(100)
+
+	$('div.box').css('height', 100)	
+
+
+	$('div').on('eventType', function() {})
+
+});
+
+</script>
+
+
+<div class="box">box-1</div>
+<div class="box">box-2</div>
+<div class="box">box-3</div>
+<div class="box">box-4</div>
+<div class="box">box-5</div>
+
+
+<!-- <img src="http://b.hiphotos.baidu.com/image/pic/item/e4dde71190ef76c666af095f9e16fdfaaf516741.jpg" alt="">
+<img src="http://g.hiphotos.baidu.com/image/pic/item/4a36acaf2edda3ccd2994a5402e93901213f9241.jpg" alt="">
+<img src="http://a.hiphotos.baidu.com/image/pic/item/a8773912b31bb051d8016e69347adab44aede04e.jpg" alt="">
+<img src="http://h.hiphotos.baidu.com/image/pic/item/b219ebc4b74543a935f28acc1c178a82b80114c0.jpg" alt="">
+<img src="http://h.hiphotos.baidu.com/image/pic/item/43a7d933c895d143c235ab2271f082025aaf076b.jpg" alt=""> -->
+
+
+<script>
+
+var a = {
+	0 : 'a',
+	1 : 'b',
+	2 : 'c',
+	3 : 'div',
+	length: 4,
+	name: 'jq'
+}
+
+$('div').each(function() {
+	$(this).addClass('111')
+	console.log(1)
+}).each(function() {
+	console.log($(this))
+})
+
+
+// 类数组
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
